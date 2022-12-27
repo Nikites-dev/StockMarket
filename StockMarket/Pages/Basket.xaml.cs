@@ -88,6 +88,10 @@ namespace StockMarket.Pages
                 listTemplate.ItemsSource = null;
                 listTemplate.ItemsSource = user.listBasket;
                 MongoDBAction.UpdateByLogin(user.Login, user);
+                
+                TxtCount.Text = user.listBasket.Count.ToString();
+                TxtBalance.Text = user.Balance.ToString();
+                TxtAmount.Text = CalculateAmount().ToString();
             }
             
         }
